@@ -1,7 +1,7 @@
 fastapi
 email-validator            # pydantic EmailStr on InviteRequest
 uvicorn
-sqlalchemy
+sqlalchemy>=2.1               # 2.1 maps plain postgresql:// to psycopg (v3), below
 python-multipart
 python-jose[cryptography]   # import: from jose import jwt
 bcrypt                      # import: bcrypt.hashpw / bcrypt.checkpw (replaces passlib)
@@ -9,7 +9,7 @@ python-dotenv                # import: from dotenv import load_dotenv
 requests                     # for Mailgun email service
 pyyaml>=6.0                  # model catalogue manifest (catalog/models.yaml)
 google-auth>=2.0             # Google OAuth ID token verification
-psycopg2-binary              # PostgreSQL driver (DATABASE_URL)
+psycopg[binary]              # PostgreSQL driver (DATABASE_URL)
 
 # Dev / test dependencies
 pytest>=7.0
